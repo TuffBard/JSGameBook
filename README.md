@@ -1,0 +1,2 @@
+# JSGameBook
+A javascript game
