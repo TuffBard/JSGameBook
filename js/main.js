@@ -1,21 +1,51 @@
 var canvas;
 var context;
 
+var keyboard;
+
+var player;
+
 $(function() {
     canvas = document.getElementById("GameCanvas");
 
     context = canvas.getContext("2d");
 
-    player = new Player();
+    initKeyboard();
+    initPlayer();
 
-    x = 150;
-    y = 150;
-
-    gameLoop();
+    Start();
 });
 
-function gameLoop() {
+/**
+ * Lance le jeu
+ */
+function Start() {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    player.draw(x, y);
-    requestAnimationFrame(gameLoop);
+    player.event();
+    player.draw();
+    requestAnimationFrame(Start);
+}
+
+/**
+ * Initialise le clavier
+ */
+function initKeyboard() {
+    keyboard = new Keyboard();
+
+    window.onkeydown = function(e) {
+        keyboard.Keys[e.key || e.keyCode] = true;
+    }
+
+    window.onkeyup = function(e) {
+        keyboard.Keys[e.key || e.keyCode] = false;
+    }
+}
+
+/**
+ * Initialise le joueur
+ */
+function initPlayer() {
+    player = new Player();
+    player.x = 150;
+    player.y = 150;
 }

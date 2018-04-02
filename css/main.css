@@ -1,3 +1,7 @@
 body {
     text-align: center;
 }
+
+#GameCanvas {
+    border: solid black 1px;
+}
