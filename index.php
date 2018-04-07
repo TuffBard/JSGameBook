@@ -9,7 +9,9 @@
     <script src="js/class/chrono.js"></script>
     <script src="js/class/keyboard.js"></script>
     <script src="js/class/player.js"></script>
-    <script src="js/service/playerService.js"></script>
+    <script src="js/service/player/playerService.js"></script>
+    <script src="js/service/player/playerDeplacementService.js"></script>
+    <script src="js/service/player/playerCollisionService.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>

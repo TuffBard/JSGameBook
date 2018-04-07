@@ -1,34 +1,12 @@
-class PlayerService {
-
-    /**
-     * Déclenche les différents events du joueur
-     */
-    event() {
-        this.movements();
-        this.collisions();
-    }
-
-    /**
-     * Dessine le joueur sur le canavs 
-     */
-    draw() {
-        context.save();
-        context.translate(player.x, player.y);
-        context.rotate((Direction.FixRotation + player.rotation) * Math.PI);
-        context.drawImage(player.img, -player.width / 2, -player.heigth / 2, player.width, player.heigth);
-        context.restore();
-    }
-
-    /***
-     * 
-     * Gesiton des déplacements
-     * 
-     */
+/***
+ * Service de gesiton des déplacements
+ */
+class PlayerDeplacementService {
 
     /**
      * Applique le mouvement du personnage
      */
-    movements() {
+    deplacement() {
         switch (true) {
             case keyboard.Left && keyboard.Down:
                 this.deplace(-player.vitesse, player.vitesse, Direction.LeftDown);
@@ -58,28 +36,6 @@ class PlayerService {
     }
 
     /**
-     * Applique les collisions au personnage
-     */
-    collisions() {
-        this.collisionEcran();
-    }
-
-    /**
-     * Gestion collision écran
-     */
-    collisionEcran() {
-        let LeftLimit = player.width * 0.7;
-        let RightLimit = canvas.width - (player.width * 0.7);
-        let UpLimit = player.width * 0.7;
-        let DownLimit = canvas.height - (player.heigth * 0.7);
-
-        player.x = player.x < LeftLimit ? LeftLimit : player.x;
-        player.x = player.x > RightLimit ? RightLimit : player.x;
-        player.y = player.y < UpLimit ? UpLimit : player.y;
-        player.y = player.y > DownLimit ? DownLimit : player.y;
-    }
-
-    /**
      * Deplace le joueur
      * @param {int} v       Vertical
      * @param {int} h       Horizontal
@@ -100,6 +56,9 @@ class PlayerService {
     }
 }
 
+/**
+ * Directions en radian
+ */
 Direction = Object.freeze({
     Right: 0,
     RightDown: 0.25,
