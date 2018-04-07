@@ -3,12 +3,13 @@ var context;
 
 var keyboard;
 
+var playerService;
 var player;
 
 $(function() {
     canvas = document.getElementById("GameCanvas");
-
     context = canvas.getContext("2d");
+    playerService = new PlayerService();
 
     initKeyboard();
     initPlayer();
@@ -21,8 +22,8 @@ $(function() {
  */
 function Start() {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    player.event();
-    player.draw();
+    playerService.event();
+    playerService.draw();
     requestAnimationFrame(Start);
 }
 
@@ -46,6 +47,6 @@ function initKeyboard() {
  */
 function initPlayer() {
     player = new Player();
-    player.x = 150;
-    player.y = 150;
+    player.x = 30;
+    player.y = 30;
 }

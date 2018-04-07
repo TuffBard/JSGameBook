@@ -9,10 +9,11 @@
     <script src="js/class/chrono.js"></script>
     <script src="js/class/keyboard.js"></script>
     <script src="js/class/player.js"></script>
+    <script src="js/service/playerService.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
     <h1>Html Canvas</h1>
-    <canvas id="GameCanvas" width="1200" height="600"></canvas>
+    <canvas id="GameCanvas" width="600" height="600"></canvas>
 </body>
 </html>
