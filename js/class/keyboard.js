@@ -7,12 +7,12 @@ class Keyboard {
         this.Keys = new Array();
 
         window.onkeydown = function(e) {
-            let key = e.key != " " ? e.key : "space";
+            let key = e.key !== " " ? e.key : "Space";
             keyboard.Keys[key] = true;
         };
     
         window.onkeyup = function(e) {
-            let key = e.key != " " ? e.key : "space";
+            let key = e.key !== " " ? e.key : "Space";
             keyboard.Keys[key] = false;
         };
     }

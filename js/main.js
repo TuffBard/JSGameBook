@@ -23,6 +23,5 @@ $(function() {
 function Start() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     playerService.event();
-    playerService.draw();
     requestAnimationFrame(Start);
 }

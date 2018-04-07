@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
     <script src="js/class/chrono.js"></script>
     <script src="js/class/keyboard.js"></script>
+    <script src="js/class/projectile.js"></script>
     <script src="js/class/player.js"></script>
     <script src="js/service/player/playerService.js"></script>
     <script src="js/service/player/playerDeplacementService.js"></script>

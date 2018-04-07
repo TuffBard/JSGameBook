@@ -52,7 +52,7 @@ class PlayerDeplacementService {
      * @params  Double  direction   (en radian)
      */
     rotateTo(direction) {
-        player.rotation = direction;
+        player.rotation = (direction + Direction.FixRotation) * Math.PI;
     }
 }
 
