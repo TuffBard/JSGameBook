@@ -5,6 +5,16 @@
 class Keyboard {
     constructor() {
         this.Keys = new Array();
+
+        window.onkeydown = function(e) {
+            let key = e.key != " " ? e.key : "space";
+            keyboard.Keys[key] = true;
+        };
+    
+        window.onkeyup = function(e) {
+            let key = e.key != " " ? e.key : "space";
+            keyboard.Keys[key] = false;
+        };
     }
 
     /**
@@ -37,5 +47,9 @@ class Keyboard {
      */
     get Down() {
         return this.Keys.ArrowDown;
+    }
+
+    get Space() {
+        return this.Keys.Space;
     }
 }

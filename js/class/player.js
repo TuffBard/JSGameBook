@@ -5,14 +5,14 @@ class Player {
     /**
      * Propriétés
      */
-    constructor() {
+    constructor(x, y) {
         this.img = new Image();
         this.img.src = "./svg/rocket.svg";
         this.width = 20;
         this.heigth = 20;
         this.rotation = 0;
-        this.x = 0;
-        this.y = 0;
+        this.x = x;
+        this.y = y;
         this.vitesse = 10;
     }
 }

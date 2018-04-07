@@ -11,8 +11,8 @@ $(function() {
     context = canvas.getContext("2d");
     playerService = new PlayerService();
 
-    initKeyboard();
-    initPlayer();
+    keyboard = new Keyboard();
+    player = new Player(30, 30);
 
     Start();
 });
@@ -25,28 +25,4 @@ function Start() {
     playerService.event();
     playerService.draw();
     requestAnimationFrame(Start);
-}
-
-/**
- * Initialise le clavier
- */
-function initKeyboard() {
-    keyboard = new Keyboard();
-
-    window.onkeydown = function(e) {
-        keyboard.Keys[e.key || e.keyCode] = true;
-    }
-
-    window.onkeyup = function(e) {
-        keyboard.Keys[e.key || e.keyCode] = false;
-    }
-}
-
-/**
- * Initialise le joueur
- */
-function initPlayer() {
-    player = new Player();
-    player.x = 30;
-    player.y = 30;
 }

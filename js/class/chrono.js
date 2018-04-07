@@ -17,7 +17,7 @@ class Chrono {
     /**
      * Obtient le 
      */
-    Get(){
+    get Get(){
         return moment().diff(this.StartDate, "seconds", true);
     }
 

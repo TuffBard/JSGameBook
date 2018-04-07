@@ -12,6 +12,7 @@
     <script src="js/service/player/playerService.js"></script>
     <script src="js/service/player/playerDeplacementService.js"></script>
     <script src="js/service/player/playerCollisionService.js"></script>
+    <script src="js/service/player/playerTirService.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>

@@ -1,7 +1,11 @@
+/**
+ * Service de gesiton du joueur
+ */
 class PlayerService {
     constructor(){
         this.playerDeplacementService = new PlayerDeplacementService();
         this.playerCollisionService = new PlayerCollisionService();
+        this.playerTirService = new PlayerTirService();
     }
 
     /**
